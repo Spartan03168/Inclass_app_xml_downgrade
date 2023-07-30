@@ -54,7 +54,6 @@ fun MainScreen() {
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                // Main Image with Overlay Text
                 ImageWithOverlayText(
                     painter = painterResource(id = R.drawable.scifi_wallpaper),
                     contentDescription = "The traveller leaving the planet through a portal that formed above the amazon forest",
@@ -344,7 +343,6 @@ fun MainScreen() {
                         )
                     }
                 }
-                // Bubble Text Component at the bottom
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center
@@ -352,6 +350,7 @@ fun MainScreen() {
                     val xml_downgrade = 1
                     val function_input = "keter"
                     if (xml_downgrade == 1){
+                        //xml downgrade
                         AndroidView(
                             factory = { context -> LayoutInflater.from(context).inflate(R.layout.bubble_text_component, null)
                             },
