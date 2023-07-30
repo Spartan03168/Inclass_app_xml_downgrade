@@ -1,6 +1,8 @@
 package com.example.proj_3
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -32,6 +34,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.viewinterop.AndroidView
 
 
 class MainActivity : ComponentActivity() {
@@ -347,11 +350,19 @@ fun MainScreen() {
                     horizontalArrangement = Arrangement.Center
                 ) {
                     val xml_downgrade = 1
+                    val function_input = "keter"
                     if (xml_downgrade == 1){
-
+                        AndroidView(
+                            factory = { context -> LayoutInflater.from(context).inflate(R.layout.bubble_text_component, null)
+                            },
+                            update = {
+                                view -> val bubbleButton = view.findViewById<Button>(R.id.bubbleButton)
+                                bubbleButton.text = function_input
+                            }
+                        )
                     }
                     else{
-                        BubbleTextComponent(text = "keter")
+                        BubbleTextComponent(text = function_input)
                     }
                 }
             }
