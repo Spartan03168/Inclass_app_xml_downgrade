@@ -1,46 +1,180 @@
-<!-- activity_main.xml -->
-
-<FrameLayout
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000">
 
-    <!-- Replace the ComposeView with your other XML layout components -->
-    <!-- You can use LinearLayout, RelativeLayout, etc. as needed -->
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/scifi_wallpaper" />
-
-    <!-- Overlay Text -->
+    <!-- ImageWithOverlayText -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_gravity="bottom"
-        android:background="#AA000000"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/overlayIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:tint="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/overlayText"
-            android:layout_width="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The travellers ship"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:layout_marginStart="8dp" />
+            android:adjustViewBounds="true"
+            android:src="@drawable/scifi_wallpaper"
+            android:contentDescription="The traveller leaving the atmosphere"
+            android:scaleType="centerCrop"
+            android:layout_gravity="top" />
     </LinearLayout>
 
-    <!-- Rest of the UI components can be added here -->
+    <!-- Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp">
 
-</FrameLayout>
+        <!-- DisplayPictureWithText -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/mil_scorpion"
+            android:contentDescription="Display Picture"
+            android:scaleType="fitCenter"
+            android:layout_gravity="top" />
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="4dp" />
+
+        <!-- Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:background="#FF444444"
+        android:layout_height="0dp"/>
+
+    <!-- information block -->
+
+    <!-- end of information block -->
+
+    <!-- Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp">
+        <!-- Column -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Camera"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GoPro"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="4dp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="4dp" />
+
+        <!-- Column -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="130m long, 45 meters wide"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="4dp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="4dp"
+            android:layout_height="4dp" />
+
+        <!-- Column -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Witnesses"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="163 minimum"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="4dp" />
+
+            <!-- More TextView elements here -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FF444444" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/bubbleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fuck xml"
+            android:background="@drawable/rounded_button_background"
+            android:layout_gravity="center"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>
