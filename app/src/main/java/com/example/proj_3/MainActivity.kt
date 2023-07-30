@@ -34,18 +34,23 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.viewinterop.AndroidView
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val composeView = findViewById<ComposeView>(R.id.composeView)
         setContent {
             MainScreen()
         }
     }
 }
 
+//No longer called for any reason post xml integration. It
 @Composable
 fun MainScreen() {
     Proj_3Theme {
